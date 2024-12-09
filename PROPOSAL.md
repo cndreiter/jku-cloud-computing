@@ -11,14 +11,7 @@
 - **Technology**: Martin Server.
 - **Purpose**: Serves map data (e.g., tiles or vector data) to the frontend or web server.
 - **Deployment**: Containerized and deployed on Kubernetes.
-
-### Web Server (API Gateway)
-- **Purpose**: Acts as an intermediary between the frontend and the fileserver.
-- **Responsibilities**:
-  - Handles user requests.
-  - Routes requests to the fileserver.
-  - *(Optional)* Adds logic for authentication, rate-limiting, or data preprocessing.
-- **Deployment**: Containerized and deployed on Kubernetes.
+- Also included some form of storage (should probably be its own service)
 
 ### Service Mesh
 - **Technology**: Istio.
@@ -27,22 +20,19 @@
   - Handles observability (telemetry, logging, tracing).
 - **Deployment**: Installed on the Kubernetes cluster as an overlay.
 
-## Optional Components
-
 ### Backup Fileserver
 - **Purpose**: Serves as a fallback in case the main fileserver fails.
 - **Integration**: Managed via Istio’s traffic routing and failover capabilities.
 
-### Caching Layer
-- **Technology**: Redis or Memcached.
-- **Purpose**: Stores frequently accessed map tiles or metadata to reduce load on the fileserver.
-
 ### Observability Stack
-- **Logging**: Fluentd or Elasticsearch for centralizing logs.
-- **Monitoring**: Prometheus for metrics and Grafana for visualization.
-- **Tracing**: Jaeger or OpenTelemetry for distributed tracing.
+- **istio** provides us here I guess? Wee need to work this out
 
-### Authentication and Authorization *(Optional)*
+## Optional Components
+
+### Chaos Engineering
+- I guess we definetly want to integrate this, only to what extent?
+
+### Authentication and Authorization
 - **Purpose**: Secures interactions between the frontend and backend.
 - **Technology**: JWT-based authentication or integration with OAuth/OpenID.
 
@@ -66,7 +56,7 @@
 ## Kubernetes Deployment
 
 ### Cluster
-- Your Kubernetes cluster hosts all services and the Istio service mesh.
+- Our Kubernetes cluster hosts all services and the Istio service mesh.
 
 ### Pods
 - Each service (frontend, fileserver, web server, optional components) runs in its own pod.
