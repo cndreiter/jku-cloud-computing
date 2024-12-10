@@ -12,16 +12,19 @@ We also intend to look into "Chaos Engineering" which would further enhance the 
 - **Technology**: Leaflet (JavaScript library for map rendering).
 - **Purpose**: Displays maps and provides user interaction (zoom, pan, overlays).
 - **Deployment**: Hosted in a Docker container, served via Kubernetes.
+- **Responsible**: Christian
 
 ### Tileserver
 - **Technology**: Martin Server.
 - **Purpose**: Serves map data (e.g., tiles or vector data) to the frontend or web server.
 - **Deployment**: Containerized and deployed on Kubernetes.
+- **Responsible**: Marcus
 
 ### Database
 - **Technology**: PostgresSQL
 - **Purpose**: Stores raw data
 - **Deployment**: Containerized and deployed on Kubernetes.
+- **Responsible**: Julian
 
 ### Service Mesh
 - **Technology**: Istio.
@@ -29,6 +32,10 @@ We also intend to look into "Chaos Engineering" which would further enhance the 
   - Provides load balancing, traffic routing, retries, and fallbacks.
   - Handles observability (telemetry, logging, tracing).
 - **Deployment**: Installed on the Kubernetes cluster as an overlay.
+- **Reponsible**:
+  - Setup: Together 
+  - Data flow: Christian
+  - Encryption: Julian
 
 ## Optional Components
 
