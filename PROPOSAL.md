@@ -13,11 +13,15 @@ We also intend to look into "Chaos Engineering" which would further enhance the 
 - **Purpose**: Displays maps and provides user interaction (zoom, pan, overlays).
 - **Deployment**: Hosted in a Docker container, served via Kubernetes.
 
-### Fileserver
+### Tileserver
 - **Technology**: Martin Server.
 - **Purpose**: Serves map data (e.g., tiles or vector data) to the frontend or web server.
 - **Deployment**: Containerized and deployed on Kubernetes.
-- Also included some form of storage (should probably be its own service)
+
+### Database
+- **Technology**: PostgresSQL
+- **Purpose**: Stores raw data
+- **Deployment**: Containerized and deployed on Kubernetes.
 
 ### Service Mesh
 - **Technology**: Istio.
