@@ -36,6 +36,7 @@ We also intend to look into "Chaos Engineering" which would further enhance the 
   - Setup: Together 
   - Data flow: Christian
   - Encryption: Julian
+  - Network policies: Marcus
 
 ## Optional Components
 
