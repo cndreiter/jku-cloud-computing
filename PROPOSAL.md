@@ -49,7 +49,7 @@ We intend to look into tools that test for outage resilients including tools tha
 
 ## Milestones
 
-- **Local test**: Test the individual components without Kubernetes.
+- **Local test**: Test the individual components on a local Kubernetes cluster.
 - **Basic setup**: Frontend, Tileserver and PostgresSQL are deployed and working but not yet scalable and no istio mesh is deployed
 - **Scalable setup**: Make sure that the components can scale horizontally.
 - **Istio setup**: Setup istio mesh
