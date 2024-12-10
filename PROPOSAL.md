@@ -54,4 +54,6 @@ We intend to look into tools that test for outage resilients including tools tha
 
 ## Project Members
 
+- Christian Niederreiter
 - Julian Garn
+- Marcus Pertlwieser
