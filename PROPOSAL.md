@@ -43,10 +43,6 @@ We also intend to look into "Chaos Engineering" which would further enhance the 
 ### Chaos Engineering
 We intend to look into tools that test for outage resilients including tools that automatically kill pods, generate large amount of traffics and randomly fails requests.
 
-### Authentication and Authorization
-- **Purpose**: Secures interactions between the frontend and backend.
-- **Technology**: JWT-based authentication or integration with OAuth/OpenID.
-
 ## Milestones
 
 - **Local test**: Test the individual components on a local Kubernetes cluster and make sure they work.
@@ -54,4 +50,4 @@ We intend to look into tools that test for outage resilients including tools tha
 - **Scalable setup**: Make sure that the components can scale horizontally.
 - **Istio setup**: Setup Istio mesh
 - **Istio configuration**: Istio Data flow, Encryption, Network policies
-- **Chaos Engineering**: Look into Chaos Engineering tools.
+- **Chaos Engineering** (Stretch Goal): Look into Chaos Engineering tools.
