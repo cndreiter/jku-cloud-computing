@@ -26,10 +26,6 @@ We also intend to look into "Chaos Engineering" which would further enhance the 
   - Handles observability (telemetry, logging, tracing).
 - **Deployment**: Installed on the Kubernetes cluster as an overlay.
 
-### Backup Fileserver
-- **Purpose**: Serves as a fallback in case the main fileserver fails.
-- **Integration**: Managed via Istio’s traffic routing and failover capabilities.
-
 ### Observability Stack
 - **istio** provides us here I guess? Wee need to work this out
 
