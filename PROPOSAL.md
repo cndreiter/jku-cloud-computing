@@ -1,4 +1,4 @@
-# Project Architecture Overview
+# Highly Resilient Geographic Map Application - Project Architecture Overview
 
 For this project we decided to deploy an application which displays an interactive map to the user. For this we will use multiple components listed below for functionality, stability and security.
 
