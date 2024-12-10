@@ -2,7 +2,7 @@
 
 For this project we decided to deploy an application which displays an interactive map to the user. For this we will use multiple components listed below for functionality, stability and security.
 
-We intend to deploy each component in a way that allows it to scale vertically and can survive single node outages.
+We intend to deploy each component in a way that allows it to scale horizontally and can survive single node outages.
 
 We also intend to look into "Chaos Engineering" which would further enhance the resilience of our system. For that purpose we may deploy additional components.
 
@@ -46,3 +46,11 @@ We intend to look into tools that test for outage resilients including tools tha
 ### Authentication and Authorization
 - **Purpose**: Secures interactions between the frontend and backend.
 - **Technology**: JWT-based authentication or integration with OAuth/OpenID.
+
+## Milestones
+
+- **Basic setup**: Frontend, Tileserver and PostgresSQL are deployed and working but not yet scalable and no istio mesh is deployed
+- **Scalable setup**: Make sure that the components can scale horizontally.
+- **Istio setup**: Setup istio mesh
+- **Istio configuration**: Istio Data flow, Encryption, Network policies
+- **Chaos Engineering**: Look into Chaos Engineering tools.
