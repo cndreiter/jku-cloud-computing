@@ -46,8 +46,8 @@ We intend to look into tools that test for outage resilients including tools tha
 ## Milestones
 
 - **Local test**: Test the individual components on a local Kubernetes cluster and make sure they work.
-- **Basic setup**: Frontend, Tileserver and PostgresSQL are deployed and working but not yet scalable and no istio mesh is deployed
+- **Basic setup**: Frontend, Tileserver and PostgresSQL are deployed and working but not yet scalable and no istio mesh is deployed.
 - **Scalable setup**: Make sure that the components can scale horizontally.
-- **Istio setup**: Setup Istio mesh
-- **Istio configuration**: Istio Data flow, Encryption, Network policies
+- **Istio setup**: Setup Istio mesh.
+- **Istio configuration**: Istio Data flow, Encryption, Network policies.
 - **Chaos Engineering** (Stretch Goal): Look into Chaos Engineering tools.
