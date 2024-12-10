@@ -41,54 +41,8 @@ We also intend to look into "Chaos Engineering" which would further enhance the 
 ## Optional Components
 
 ### Chaos Engineering
-- I guess we definetly want to integrate this, only to what extent?
+We intend to look into tools that test for outage resilients including tools that automatically kill pods, generate large amount of traffics and randomly fails requests.
 
 ### Authentication and Authorization
 - **Purpose**: Secures interactions between the frontend and backend.
 - **Technology**: JWT-based authentication or integration with OAuth/OpenID.
-
-## Data Flow
-1. **User Interaction**:
-   - A user interacts with the frontend (e.g., pans or zooms the map).
-   - The frontend sends requests to the web server for map data.
-
-2. **Request Handling**:
-   - The web server receives the request and routes it to the fileserver for the requested tiles or data.
-
-3. **Service Mesh**:
-   - Istio manages the traffic flow, ensuring reliability with features like retries, circuit breaking, and fallbacks.
-
-4. **Map Data Delivery**:
-   - The fileserver responds with the required map data, which the web server forwards to the frontend for rendering.
-
-5. **Resilience**:
-   - If the primary fileserver fails, Istio reroutes traffic to a backup server (if configured).
-
-## Kubernetes Deployment
-
-### Cluster
-- Our Kubernetes cluster hosts all services and the Istio service mesh.
-
-### Pods
-- Each service (frontend, fileserver, web server, optional components) runs in its own pod.
-
-### Services
-- Kubernetes `Services` expose each component internally within the cluster.
-- The frontend may be exposed externally using a `LoadBalancer` or `Ingress` resource.
-
-### Istio Configuration
-- Istio manages communication between services using VirtualServices, DestinationRules, and Gateways.
-
-## Key Features
-
-### Resilience
-- Managed via Istio’s traffic rules and fault-tolerance mechanisms (e.g., retries, failovers).
-
-### Observability
-- Monitoring and logging are integrated to understand the system’s health and performance.
-
-### Scalability
-- Kubernetes allows scaling up/down services as required.
-
-### Optional Chaos Engineering
-- Intentional failures are introduced to test the resilience of the system under stress.
