@@ -2,7 +2,7 @@
 
 For this project we decided to deploy an application which displays an interactive map to the user. For this use multiple components listed below for functionality, stability and security.
 
-We intend to deploy each component in a way that allows it to scale vertically and can survive basic outages.
+We intend to deploy each component in a way that allows it to scale vertically and can survive single node outages.
 
 We also intend to look into "Chaos Engineering" which would further enhance the resilience of our system. For that purpose we may deploy additional components.
 
