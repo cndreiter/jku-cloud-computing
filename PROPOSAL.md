@@ -1,6 +1,6 @@
 # Project Architecture Overview
 
-For this project we decided to deploy an application which displays an interactive map to the user. For this use multiple components listed below for functionality, stability and security.
+For this project we decided to deploy an application which displays an interactive map to the user. For this we will use multiple components listed below for functionality, stability and security.
 
 We intend to deploy each component in a way that allows it to scale vertically and can survive single node outages.
 
