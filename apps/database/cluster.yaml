@@ -2,11 +2,12 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: postgresql
+  namespace: jku-cloud-computing
 spec:
   instances: 3
 
   storage:
     size: 1Gi
-    
+
   monitoring:
     enablePodMonitor: true
