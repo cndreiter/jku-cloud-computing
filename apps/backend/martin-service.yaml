@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: martin-server
+  namespace: jku-cloud-computing
   labels:
     app: martin-server
 spec:
@@ -21,7 +22,10 @@ spec:
         - containerPort: 3000
         env:
         - name: DATABASE_URL
-          value: "postgres://user:password@fake-host/dbname" # Placeholder
+          valueFrom: 
+            secretKeyRef: 
+              name: postgresql-app
+              key: uri
         volumeMounts:
         - name: martin-cache
           mountPath: /cache # Mount for temporary caching
@@ -29,11 +33,13 @@ spec:
       - name: martin-cache
         emptyDir: 
           medium: "Memory" # I think this uses RAM for storing temporary files
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: martin-service
+  namespace: jku-cloud-computing
 spec:
   selector:
     app: martin-server

@@ -109,7 +109,9 @@ data:
       tracing:
         enabled: false
       prometheus:
-        url: "http://prometheus-community-kube-prometheus.default:9090/"
+        url: "http://prometheus-community-kube-prometheus.monitoring:9090/"
+      grafana:
+        internal_url: "http://prometheus-community-grafana.monitoring:80/"
     identity:
       cert_file: ""
       private_key_file: ""
