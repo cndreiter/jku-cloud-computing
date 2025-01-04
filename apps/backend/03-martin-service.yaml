@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: martin-server
+  labels:
+    app: martin-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: martin-server
+  template:
+    metadata:
+      labels:
+        app: martin-server
+    spec:
+      containers:
+      - name: martin
+        image: ghcr.io/maplibre/martin:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DATABASE_URL
+          value: "postgres://user:password@fake-host/dbname" # Placeholder
+        volumeMounts:
+        - name: martin-cache
+          mountPath: /cache # Mount for temporary caching
+      volumes:
+      - name: martin-cache
+        emptyDir: 
+          medium: "Memory" # I think this uses RAM for storing temporary files
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: martin-service
+spec:
+  selector:
+    app: martin-server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
