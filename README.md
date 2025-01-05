@@ -5,6 +5,7 @@ The system can be recreated using the commands below. Wait for the system to sta
 ```bash
 kubectl apply --server-side --wait -R -f ./prerequisites/
 kubectl apply --server-side --wait -R -f ./apps/
+kubectl apply --server-side --wait -R -f ./ingress/
 kubectl apply --server-side --wait -R -f ./monitoring/
 ```
 

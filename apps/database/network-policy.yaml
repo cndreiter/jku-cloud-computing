@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-martin-in-db
+  namespace: jku-cloud-computing
+spec:
+  podSelector:
+    matchLabels:
+      cnpg.io/cluster: postgresql
+  policyTypes:
+  - Ingress
+  - Egress 
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: martin-server
+      ports:
+      - protocol: TCP
+        port: 5432
+  egress: [] # No rules for egress -> no egress allowed
