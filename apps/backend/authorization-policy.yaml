@@ -1,0 +1,17 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-martin-egress-to-db
+  namespace: jku-cloud-computing
+spec:
+  selector:
+    matchLabels:
+      app: martin-server
+  action: ALLOW
+  rules:
+  - to:
+    - operation:
+        ports: ["5432"]
+      destination:
+        matchLabels:
+          app: postgresql

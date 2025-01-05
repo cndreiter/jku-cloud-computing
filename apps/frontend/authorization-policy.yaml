@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: isolate-frontend-egress
+  namespace: jku-cloud-computing
+spec:
+  selector:
+    matchLabels:
+      app: nginx-leaflet
+  action: DENY
+  rules:
+  - to: []
