@@ -33,7 +33,6 @@ spec:
       - name: martin-cache
         emptyDir: 
           medium: "Memory" # I think this uses RAM for storing temporary files
-
 ---
 apiVersion: v1
 kind: Service
