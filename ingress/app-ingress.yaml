@@ -5,17 +5,7 @@ metadata:
   namespace: jku-cloud-computing
 spec:
   rules:
-  # - host: app.bestmapfiles.jku.cloud.com
-  #   http:
-  #     paths:
-  #     - path: /
-  #       pathType: Prefix
-  #       backend:
-  #         service:
-  #           name: frontend-service
-  #           port:
-  #             number: 80
-  - host: api.bestmapfiles.jku.cloud.com
+  - host: map-api.projectselene.org
     http:
       paths:
       - path: /
@@ -23,5 +13,15 @@ spec:
         backend:
           service:
             name: martin-service
+            port:
+              number: 80
+  - host: map.projectselene.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-service
             port:
               number: 80
