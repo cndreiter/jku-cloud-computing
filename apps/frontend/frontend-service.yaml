@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: jku-cloud-computing
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: nginx-leaflet
