@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: nginx-leaflet
+  namespace: jku-cloud-computing
   name: nginx-leaflet
 spec:
   replicas: 1
@@ -18,8 +19,11 @@ spec:
         app: nginx-leaflet
     spec:
       containers:
-      - image: openfirmware/nginx-leaflet
-        imagePullPolicy: Never
+      - image: ghcr.io/cndreiter/nginx-leaflet:latest
+        imagePullPolicy: Always
         name: nginx-leaflet
-        resources: {}
-status: {}
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: nginx-leaflet-configmap
