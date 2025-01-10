@@ -1,25 +1,25 @@
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   creationTimestamp: null
-#   labels:
-#     app: nginx-leaflet
-#   name: nginx-leaflet
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: nginx-leaflet
-#   strategy: {}
-#   template:
-#     metadata:
-#       creationTimestamp: null
-#       labels:
-#         app: nginx-leaflet
-#     spec:
-#       containers:
-#       - image: openfirmware/nginx-leaflet
-#         imagePullPolicy: Never
-#         name: nginx-leaflet
-#         resources: {}
-# status: {}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx-leaflet
+  name: nginx-leaflet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-leaflet
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx-leaflet
+    spec:
+      containers:
+      - image: openfirmware/nginx-leaflet
+        imagePullPolicy: Never
+        name: nginx-leaflet
+        resources: {}
+status: {}
