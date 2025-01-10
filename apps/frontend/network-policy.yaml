@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: isolate-frontend
+  namespace: jku-cloud-computing
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx-leaflet
+  policyTypes:
+  - Egress
+  egress: []
