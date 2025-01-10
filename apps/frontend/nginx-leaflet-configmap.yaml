@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: jku-cloud-computing
+  name: nginx-leaflet-configmap
+data:
+  TILESERVER: "http://map-api.projectselene.org/planet_osm_roads/{z}/{x}/{y}"
+  ATTRIBUTION: ""
