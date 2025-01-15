@@ -25,7 +25,7 @@ kubectl port-forward svc/prometheus-community-grafana -n monitoring 8081:80
 
 ## Database
 
-Configured using helm
+Configured using helm with GIS plugin.
 
 ### Database file upload
 
