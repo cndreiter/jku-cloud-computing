@@ -27,3 +27,8 @@ spec:
         envFrom:
           - configMapRef:
               name: nginx-leaflet-configmap
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "200m"

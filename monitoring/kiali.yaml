@@ -90,6 +90,7 @@ data:
       replicas: 1
       resources:
         limits:
+          cpu: 50m
           memory: 1Gi
         requests:
           cpu: 10m
@@ -406,6 +407,7 @@ spec:
           mountPath: "/kiali-cabundle"
         resources:
           limits:
+            cpu: 50m
             memory: 1Gi
           requests:
             cpu: 10m

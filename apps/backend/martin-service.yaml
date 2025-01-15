@@ -26,6 +26,11 @@ spec:
             secretKeyRef: 
               name: postgresql-app
               key: uri
+        resources:
+          requests:
+            cpu: "150m"
+          limits:
+            cpu: "350m"
         volumeMounts:
         - name: martin-cache
           mountPath: /cache # Mount for temporary caching
