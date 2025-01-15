@@ -1,8 +1,8 @@
 # Highly Resilient Geographic Map Application - Project Overview
 
-The system can be recreated using the commands below. Wait for the system to stabilize after every command.
-
 ## Setup
+
+The system can be recreated using the commands below. Wait for the system to stabilize after every command.
 
 ```bash
 kubectl apply --server-side --wait -R -f ./prerequisites/
@@ -33,8 +33,8 @@ Describe how to upload map data.
 
 ## Backend
 
-Uses (martin-server)[https://martin.maplibre.org/], a vector tiles server written in Rust. We use the Docker image they provide.
+Uses [martin-server](https://martin.maplibre.org/), a vector tiles server written in Rust. We use the Docker image they provide.
 
 ## Frontend
 
-Uses (Leaflet)[https://leafletjs.com/] to interactively display maps.
+Uses [Leaflet](https://leafletjs.com/) to interactively display maps.
