@@ -16,7 +16,7 @@ spec:
         - CREATE EXTENSION postgis_tiger_geocoder;
 
   storage:
-    size: 1Gi
+    size: 10Gi
 
   monitoring:
     enablePodMonitor: true
