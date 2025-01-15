@@ -38,3 +38,7 @@ Uses [martin-server](https://martin.maplibre.org/), a vector tiles server writte
 ## Frontend
 
 Uses [Leaflet](https://leafletjs.com/) to interactively display maps.
+
+## Istio
+
+Describe how we configured istio, using Helm.
