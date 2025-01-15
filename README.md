@@ -2,6 +2,8 @@
 
 The system can be recreated using the commands below. Wait for the system to stabilize after every command.
 
+## Setup
+
 ```bash
 kubectl apply --server-side --wait -R -f ./prerequisites/
 kubectl apply --server-side --wait -R -f ./apps/
@@ -20,3 +22,19 @@ View Grafana dashboard at [http://localhost:8081](http://localhost:8081) (user: 
 ```bash
 kubectl port-forward svc/prometheus-community-grafana -n monitoring 8081:80
 ```
+
+## Database
+
+Configured using helm
+
+### Database file upload
+
+Describe how to upload map data.
+
+## Backend
+
+Uses (martin-server)[https://martin.maplibre.org/], a vector tiles server written in Rust. We use the Docker image they provide.
+
+## Frontend
+
+Uses (Leaflet)[https://leafletjs.com/] to interactively display maps.
