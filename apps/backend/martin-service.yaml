@@ -6,7 +6,7 @@ metadata:
   labels:
     app: martin-server
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: martin-server
@@ -15,6 +15,13 @@ spec:
       labels:
         app: martin-server
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app: martin-server
+            topologyKey: "kubernetes.io/hostname"
       containers:
       - name: martin
         image: ghcr.io/maplibre/martin:latest
