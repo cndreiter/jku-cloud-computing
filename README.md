@@ -23,6 +23,12 @@ View Grafana dashboard at [http://localhost:8081](http://localhost:8081) (user: 
 kubectl port-forward svc/prometheus-community-grafana -n monitoring 8081:80
 ```
 
+### Grafana Database Dashboard
+
+To view a preconfigured Dashboard using Prometheus, head to the "Dashboard" section, click create & import Dashboard and use the following link for your import:
+
+https://grafana.com/grafana/dashboards/20417-cloudnativepg/
+
 ## Database
 
 Configured using helm with GIS plugin.
