@@ -48,3 +48,11 @@ Uses [Leaflet](https://leafletjs.com/) to interactively display maps.
 ## Istio
 
 Describe how we configured istio, using Helm.
+
+# Lessons Learned
+
+- Minikube eats considerable amount of memory.
+- Google Cloud visibility did cause problems multiple times. We more or less learned some of the quirks of Google Cloud.
+- Simulating Node failure led to failure of the application. We tried reducing resource limits of our pods to no avail. Turns out even though e2-medium on GKE advertises 2CPU's per Node, only 940m is actually allocatable. We switched to e2-standard-4 with 4CPU's per Node.
+- Simulating Node failure still sometimes lead to long downtime, this was due to the pods for a certain component being all located on the same Node. We included Anti Affinity for Frontend and Backend Pods. Database seems difficult and would require additional effort in terms of configuration.
+- Istio is not easy to configure, when applying istio manifest for the second time on a fresh Cluster we get errors about conflicts between fields.
