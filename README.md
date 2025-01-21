@@ -80,7 +80,7 @@ Uses [martin-server](https://martin.maplibre.org/), a vector tiles server writte
 
 ### Frontend
 
-Uses [Leaflet](https://leafletjs.com/) to interactively display maps.
+Uses [Leaflet](https://leafletjs.com/) to interactively display maps. The container image is forked from [openfirmware/docker-nginx-leaflet](https://github.com/openfirmware/docker-nginx-leaflet) to [cndreiter/docker-nginx-leaflet](https://github.com/cndreiter/docker-nginx-leaflet) and built from there. The resulting image is available at [docker pull ghcr.io/cndreiter/nginx-leaflet:latest](ghcr.io/cndreiter/nginx-leaflet:latest).
 
 ### Istio
 
