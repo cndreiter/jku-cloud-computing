@@ -5,8 +5,8 @@
 The system can be recreated using the commands below. Wait for the system to stabilize after every command.
 
 The host names for the frontend API and for the frontend are located at the file _ingress/app-ingress.yaml_:
-* Frontend API: map-api.projectselene.org
-* Frontend: map.projectselene.org
+* Frontend API: _map-api.projectselene.org_
+* Frontend: _map.projectselene.org_
 
 They are just placeholders. Replace them with your own domains according to your needs and connect your domains to the IP address returned by the following command:
 
