@@ -23,7 +23,7 @@ $ kubectl apply --server-side --wait -R -f ./ingress/
 $ kubectl apply --server-side --wait -R -f ./monitoring/
 ```
 
-View the frontend at [http://map.projectselene.org](http://map.projectselene.org).
+View the frontend at [http://map.projectselene.org](http://map.projectselene.org) (replace the domain with your own domain for accessing the frontend on your own cluster).
 
 View Kiali dashboard at [http://localhost:20001](http://localhost:20001) with:
 
