@@ -10,7 +10,7 @@ The host names for the frontend API and for the frontend are located at the file
 
 They are just placeholders. Replace them with your own domains according to your needs and connect your domains to the IP address returned by the following command:
 
-```bash
+```
 $ kubectl get ingresses -n jku-cloud-computing
 NAME          CLASS    HOSTS                                             ADDRESS         PORTS   AGE
 app-ingress   <none>   map-api.projectselene.org,map.projectselene.org   #.#.#.#         80      18h
