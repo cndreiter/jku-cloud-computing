@@ -45,7 +45,26 @@ https://grafana.com/grafana/dashboards/20417-cloudnativepg/
 
 ### Database file upload
 
-TODO Describe how to upload map data.
+1. Obtain a source file in the `.osm.pbf` format, for example from https://download.geofabrik.de/europe.html
+1. Make sure the database is running
+1. Obtain the database password using 
+    
+    ```bash
+    kubectl get secret postgresql-app -n jku-cloud-computing --template={{.data.password}} | base64 -d
+    ```
+1. Execute the command:
+   
+    ```bash
+    kubectl port-forward svc/postgresql-rw -n jku-cloud-computing 5432
+    ```
+2. While that command is running open a seperate terminal to run:
+    
+    ```bash
+    docker run -it --rm -v /path/to/download/folder:/downloads:ro iboates/osm2pgsql -U app -d app -H host.docker.internal --number-processes 4 /downloads/your-file-name-here.osm.pbf -W
+    ```
+3. Enter the database password when asked.
+
+Please note that even if the upload fails at the end, a part of the map might still be available after the failed upload. If you are using linux you might also need to add `--add-host=host.docker.internal:host-gateway` to the run args.
 
 ## Technical Background
 
@@ -63,7 +82,10 @@ Uses [Leaflet](https://leafletjs.com/) to interactively display maps.
 
 ### Istio
 
-TODO Describe how we configured istio, using Helm.
+In order to simplify replication of our setup, we decided to install istio by converting it to a kubernetes yaml first. We did this using the following command:
+```bash
+helm template istiod istio/istiod -n istio-system --kube-version v1.30.5 > istio.yaml
+```
 
 # Lessons Learned
 
