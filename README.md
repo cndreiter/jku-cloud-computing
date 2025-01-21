@@ -23,7 +23,9 @@ $ kubectl apply --server-side --wait -R -f ./ingress/
 $ kubectl apply --server-side --wait -R -f ./monitoring/
 ```
 
-View kiali dashborad at [http://localhost:20001](http://localhost:20001) with:
+View the frontend at [http://map.projectselene.org](http://map.projectselene.org).
+
+View Kiali dashboard at [http://localhost:20001](http://localhost:20001) with:
 
 ```bash
 $ kubectl port-forward svc/kiali -n istio-system 20001
@@ -41,25 +43,27 @@ To view a preconfigured Dashboard of the Database using Grafana, head to the "Da
 
 https://grafana.com/grafana/dashboards/20417-cloudnativepg/
 
-## Database
+### Database file upload
+
+TODO Describe how to upload map data.
+
+## Technical Background
+
+### Database
 
 Configured using helm with GIS plugin.
 
-### Database file upload
-
-Describe how to upload map data.
-
-## Backend
+### Backend
 
 Uses [martin-server](https://martin.maplibre.org/), a vector tiles server written in Rust. We use the Docker image they provide.
 
-## Frontend
+### Frontend
 
 Uses [Leaflet](https://leafletjs.com/) to interactively display maps.
 
-## Istio
+### Istio
 
-Describe how we configured istio, using Helm.
+TODO Describe how we configured istio, using Helm.
 
 # Lessons Learned
 
