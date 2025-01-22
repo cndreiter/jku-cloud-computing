@@ -70,6 +70,10 @@ Please note that even if the upload fails at the end, a part of the map might st
 
 ## Technical Background
 
+### Architecture Overview
+
+![Architecture Overview](illustrations/architecture.png)
+
 ### Database
 
 Configured using helm with GIS plugin.
